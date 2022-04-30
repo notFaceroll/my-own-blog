@@ -10,10 +10,19 @@ const Container = styled.section`
   align-items: center;
   background-image: linear-gradient(to bottom right, #333333, #121212);
 
+  > div {
+    border-radius: 25px;
+    overflow: hidden;
+  }
+
   h1 {
     font-size: 3rem;
     font-weight: bold;
     color: #fafafa;
+    border-bottom: 2px solid #fafafa;
+    border-left: 2px solid #fafafa;
+    padding: 1rem;
+    border-radius: 5px;
   }
 
   p {
@@ -34,7 +43,7 @@ export default function Hero() {
       </div>
       <h1>Hello, I'm Miguel!</h1>
       <p>
-        and this is place where I dump pretty much everything I have done in the
+        And this is place where I dump pretty much everything I have done in the
         long process of learning web dev.
       </p>
     </Container>

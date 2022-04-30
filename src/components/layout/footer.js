@@ -9,9 +9,11 @@ const Container = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: linear-gradient(to right, #ffdef2, #e6f0ff);
+  background-image: linear-gradient(to right, #ffdef2, #e6f0ff);
+  color: #333333;
+  z-index: 10;
 `;
 
 export default function Footer() {
-  return <Container>Github</Container>;
+  return <Container>Created with NextJS</Container>;
 }

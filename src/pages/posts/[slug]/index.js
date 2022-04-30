@@ -1,8 +1,17 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import styled from 'styled-components';
+import PostContent from '../../../components/posts/post-detail/post-content';
 
+const Container = styled.div`
+  height: 100vh;
+  background-color: #bcbcbc;
+  padding-top: 84px;
+`;
 
 export default function PostDetailPage() {
   return (
-    <h1>Post Detail Page</h1>
-  )
+    <Container>
+      <PostContent />
+    </Container>
+  );
 }

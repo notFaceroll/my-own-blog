@@ -11,14 +11,15 @@ const Header = styled.header`
   align-items: center;
   padding: 0 2rem;
   width: 100%;
-  height: 36px;
-  background-color: #e6f0ff;
+  height: 64px;
+  background-color: #666A86;
   z-index: 10;
 
   nav {
     width: 20%;
 
     ul {
+      list-style: none;
       display: flex;
       justify-content: space-between;
     }

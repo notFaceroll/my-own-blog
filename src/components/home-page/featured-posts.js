@@ -3,7 +3,7 @@ import PostsGrid from '../posts/posts-grid';
 import styled from 'styled-components';
 
 const Container = styled.section`
-  height: 100vh;
+  height: 100%;
   background-color: #333333;
   width: 100%;
   display: flex;
