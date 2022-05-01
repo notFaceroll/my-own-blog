@@ -1,5 +1,6 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+import Notification from '../ui/notification';
 
 const Container = styled.section`
   display: flex;
@@ -62,47 +63,91 @@ const ButtonContainer = styled.div`
   }
 `;
 
+async function sendContactData(contactDetails) {
+  const response = await fetch('/api/contact', {
+    method: 'POST',
+    body: JSON.stringify(contactDetails),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.message || 'Something went wrong!');
+  }
+}
+
 export default function ContactForm() {
   const nameInputRef = useRef();
   const emailInputRef = useRef();
   const messageInputRef = useRef();
+  const [requestStatus, setRequestStatus] = useState(); // pending, success, error, null
+  const [requestError, setRequestError] = useState();
 
-  function sendMessageHandler(event) {
+  useEffect(() => {
+    if (requestStatus === 'success' || requestStatus === 'error') {
+      const timer = setTimeout(() => {
+        setRequestError(null);
+        setRequestStatus(null);
+      }, 3000);
+      return () => {
+        clearTimeout(timer);
+      };
+    }
+  }, [requestStatus]);
+
+  async function sendMessageHandler(event) {
     event.preventDefault();
 
     const enteredEmail = emailInputRef.current.value;
     const enteredName = nameInputRef.current.value;
     const enteredMessage = messageInputRef.current.value;
 
-    const newMessage = {
-      email: enteredEmail,
-      name: enteredName,
-      message: enteredMessage,
-    };
+    setRequestStatus('pending');
 
-    console.log(newMessage);
-
-    fetch('/api/contact', {
-      method: 'POST',
-      body: JSON.stringify({
+    try {
+      await sendContactData({
         email: enteredEmail,
         name: enteredName,
         message: enteredMessage,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+      });
+      setRequestStatus('success');
+    } catch (error) {
+      setRequestError(error.message);
+      setRequestStatus('error');
+    }
+    document.getElementById('form').reset();
+  }
 
-    // fetch('/api/hello')
-    //   .then((response) => response.json())
-    //   .then((data) => console.log(data));
+  let notification;
+  if (requestStatus === 'pending') {
+    notification = {
+      status: 'pending',
+      title: 'Sending message...',
+      message: 'Your message is on its way...',
+    };
+  }
+  if (requestStatus === 'success') {
+    notification = {
+      status: 'success',
+      title: 'Message sent!',
+      message: 'Your message sent successfully!',
+    };
+  }
+  if (requestStatus === 'error') {
+    notification = {
+      status: 'error',
+      title: 'Error',
+      message: requestError,
+    };
   }
 
   return (
     <Container>
       <h1>How can I help you?</h1>
-      <Form onSubmit={sendMessageHandler}>
+      <Form onSubmit={sendMessageHandler} id="form">
         <Controls>
           <Control>
             <label htmlFor="email">Your Email</label>
@@ -121,6 +166,13 @@ export default function ContactForm() {
           <button>Send Message</button>
         </ButtonContainer>
       </Form>
+      {notification && (
+        <Notification
+          status={notification.status}
+          title={notification.title}
+          message={notification.message}
+        />
+      )}
     </Container>
   );
 }
