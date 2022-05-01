@@ -42,9 +42,14 @@ const ListItem = styled.li`
 const CardContent = styled.a`
   position: absolute;
   inset: 5px;
-  background: linear-gradient(to bottom right, #333333, #121212);
-
+  /* background: linear-gradient(to bottom right, #333333, #121212); */
+  background-color: #4a4e69;
   z-index: 20;
+`;
+
+const CardText = styled.div`
+  padding: 1rem;
+  color: #F2E9E4;
 `;
 
 export default function PostItem({ post }) {
@@ -66,11 +71,11 @@ export default function PostItem({ post }) {
           <div>
             <Image src={imagePath} width={300} height={200} />
           </div>
-          <div>
+          <CardText>
             <h3>{title}</h3>
             <time>{formattedDate}</time>
             <p>{excerpt}</p>
-          </div>
+          </CardText>
         </CardContent>
       </Link>
     </ListItem>

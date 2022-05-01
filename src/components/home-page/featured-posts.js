@@ -3,12 +3,10 @@ import PostsGrid from '../posts/posts-grid';
 import styled from 'styled-components';
 
 const Container = styled.section`
-  height: 100%;
-  background-color: #333333;
+  height: 80vh;
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
   
   h2 {
     margin: 2rem auto;

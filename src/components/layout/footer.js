@@ -5,12 +5,12 @@ const Container = styled.footer`
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 20px;
+  height: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to right, #ffdef2, #e6f0ff);
-  color: #333333;
+  background-color: #4A4E69;
+  color: #F2E9E4;
   z-index: 10;
 `;
 

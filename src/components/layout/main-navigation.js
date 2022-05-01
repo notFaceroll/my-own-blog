@@ -12,8 +12,9 @@ const Header = styled.header`
   padding: 0 2rem;
   width: 100%;
   height: 64px;
-  background-color: #666A86;
+  background-color: #4A4E69;
   z-index: 10;
+  color: #F2E9E4;
 
   nav {
     width: 20%;

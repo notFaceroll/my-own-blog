@@ -6,9 +6,9 @@ const Container = styled.section`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  color: #F2E9E4;
   align-items: center;
-  background-image: linear-gradient(to bottom right, #333333, #121212);
+  padding-top: 2rem;
 
   > div {
     border-radius: 25px;
@@ -18,15 +18,12 @@ const Container = styled.section`
   h1 {
     font-size: 3rem;
     font-weight: bold;
-    color: #fafafa;
-    border-bottom: 2px solid #fafafa;
-    border-left: 2px solid #fafafa;
+    border-bottom: 2px solid #F2E9E4;
+    border-left: 2px solid #F2E9E4;
     padding: 1rem;
-    border-radius: 5px;
   }
 
   p {
-    color: #fafafa;
   }
 `;
 

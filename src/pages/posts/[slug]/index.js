@@ -4,9 +4,6 @@ import { getPostData, getPostsFiles } from '../../../../lib/posts-util';
 import PostContent from '../../../components/posts/post-detail/post-content';
 
 const Container = styled.div`
-  height: 100%;
-  background-color: #bcbcbc;
-  padding: 84px 0;
 `;
 
 export default function PostDetailPage({ post }) {

@@ -11,7 +11,7 @@ const Container = styled.article`
   flex-direction: column;
   /* align-items: center; */
   justify-content: space-between;
-  background-color: #fffeee;
+  background-color: #C9ADA7;
   width: clamp(350px, 75vw, 1280px);
   margin: 0 auto;
   padding: 2rem;
