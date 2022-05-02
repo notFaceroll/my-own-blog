@@ -3,10 +3,9 @@ import PostsGrid from '../posts/posts-grid';
 import styled from 'styled-components';
 
 const Container = styled.section`
-  height: 80vh;
-  width: 100%;
   display: flex;
   flex-direction: column;
+  flex: 1;
   
   h2 {
     margin: 2rem auto;
@@ -18,7 +17,7 @@ const Container = styled.section`
 export default function Featured(props) {
   return (
     <Container>
-      <h2>Featured</h2>
+      <h2>Featured Post</h2>
       <PostsGrid posts={props.posts} />
     </Container>
   );

@@ -28,7 +28,8 @@ const ListItem = styled.li`
     right: 0;
     width: 600px;
     height: 50px;
-    background: linear-gradient(to right, #56e8f2, #2f80ed);
+    /* background: linear-gradient(to right, #56e8f2, #2f80ed); */
+    background-color: #C9ADA7;
     transform: rotate(-40deg) translateY(-100px);
     z-index: 10;
   }

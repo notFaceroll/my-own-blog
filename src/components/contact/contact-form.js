@@ -8,7 +8,7 @@ const Container = styled.section`
   justify-content: space-between;
   align-items: center;
   background-color: #4a4e69;
-  width: clamp(350px, 60vw, 1280px);
+  width: clamp(350px, 60vw, 800px);
   margin: 0 auto;
   padding: 2rem;
   gap: 2rem;
@@ -47,6 +47,9 @@ const Control = styled.div`
     padding: 0.5rem;
     background-color: #f2e9e4;
   }
+  textarea {
+    resize: none;
+  }
 `;
 
 const ButtonContainer = styled.div`
@@ -60,6 +63,7 @@ const ButtonContainer = styled.div`
     color: #333333;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: 700;
   }
 `;
 

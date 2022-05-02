@@ -1,50 +1,93 @@
 import React from 'react';
 import Link from 'next/link';
-import Logo from './logo';
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
 
 const Header = styled.header`
   position: fixed;
   top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 0 2rem;
   width: 100%;
   height: 64px;
-  background-color: #4A4E69;
+  background-color: #4a4e69;
   z-index: 10;
-  color: #F2E9E4;
+  color: #f2e9e4;
 
   nav {
-    width: 20%;
+    width: clamp(350px, 60vw, 1440px);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0 auto;
 
     ul {
+      width: 55%;
       list-style: none;
       display: flex;
       justify-content: space-between;
+      padding: 0;
+      font-size: 1.125rem;
+    }
+
+    li {
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+
+      .active {
+        font-weight: bold;
+      }
+    }
+
+    li::before {
+      content: '';
+      position: absolute;
+      height: 1.125px;
+      width: 100%;
+      background-color: #f2e9e4;
+      bottom: 0;
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform 0.25s ease;
+    }
+
+    li:hover::before {
+      transform: scaleX(1);
     }
   }
 `;
 
 export default function MainNavigation() {
+  const router = useRouter();
   return (
     <Header>
-      <Link href="/">
-        <a>
-          <Logo />
-        </a>
-      </Link>
       <nav>
         <ul>
           <li>
-            <Link href="/posts">Posts</Link>
+            <Link href="/">
+              <a className={router.pathname == '/' ? 'active' : ''}>Home</a>
+            </Link>
           </li>
           <li>
-            <Link href="/about">About</Link>
+            <Link href="/posts">
+              <a className={router.pathname == '/posts' ? 'active' : ''}>
+                Posts
+              </a>
+            </Link>
           </li>
           <li>
-            <Link href="/contact">Contact</Link>
+            <Link href="/about">
+              <a className={router.pathname == '/about' ? 'active' : ''}>
+                About
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact">
+              <a className={router.pathname == '/contact' ? 'active' : ''}>
+                Contact
+              </a>
+            </Link>
           </li>
         </ul>
       </nav>
