@@ -1,7 +1,6 @@
 import { MongoClient } from 'mongodb';
 
-const url =
-  'mongodb+srv://naegling:KmbOwZbFxt4ykNSz@cluster0.pbt1m.mongodb.net/my-site?retryWrites=true&w=majority';
+const url = `mongodb+srv://${process.env.mongo_username}:${process.env.mongo_pass}@${process.env.mongo_cluster}.pbt1m.mongodb.net/${process.env.mongo_database}?retryWrites=true&w=majority`;
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {

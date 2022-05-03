@@ -3,19 +3,22 @@ import styled from 'styled-components';
 import PostHeader from './post-header';
 import ReactMarkdown from 'react-markdown';
 import Image from 'next/image';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import atomDark from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark';
+import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
 
 const Container = styled.article`
   display: flex;
   flex-direction: column;
   /* align-items: center; */
   justify-content: space-between;
-  background-color: #C9ADA7;
+  background-color: #c9ada7;
   width: clamp(350px, 75vw, 1280px);
   margin: 0 auto;
   padding: 2rem;
 `;
+
+SyntaxHighlighter.registerLanguage('js', js);
 
 export default function PostContent({ post }) {
   const imagePath = `/images/posts/${post.slug}/${post.image}`;

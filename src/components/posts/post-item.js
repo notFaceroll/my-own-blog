@@ -70,7 +70,7 @@ export default function PostItem({ post }) {
       <Link href={linkPath}>
         <CardContent>
           <div>
-            <Image src={imagePath} width={300} height={200} />
+            <Image src={imagePath} width={300} height={200} alt='description' />
           </div>
           <CardText>
             <h3>{title}</h3>
