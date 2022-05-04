@@ -9,9 +9,15 @@ const Header = styled.header`
   width: 100%;
   border-bottom: 6px solid #333333;
   margin-bottom: 15px;
+  padding-bottom: 2rem;
   h1 {
     color: #333333;
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    
+    text-align: center;
   }
 `;
 

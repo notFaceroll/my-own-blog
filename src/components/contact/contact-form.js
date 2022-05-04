@@ -8,15 +8,17 @@ const Container = styled.section`
   justify-content: space-between;
   align-items: center;
   background-color: #4a4e69;
-  width: clamp(350px, 60vw, 800px);
+  width: clamp(250px, 60vw, 800px);
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.25rem;
   gap: 2rem;
   border-radius: 5px;
 
   h1 {
     color: #f2e9e4;
-    font-size: 3rem;
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    text-align: center;
+    margin: 0;
   }
 `;
 
@@ -30,6 +32,10 @@ const Form = styled.form`
 const Controls = styled.div`
   display: flex;
   gap: 1rem;
+
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 const Control = styled.div`
@@ -39,6 +45,8 @@ const Control = styled.div`
 
   label {
     color: #f2e9e4;
+    font-size: clamp(.8rem, 4vw, 1.125rem);
+    margin-bottom: .5em;
   }
   input,
   textarea {
@@ -55,6 +63,12 @@ const Control = styled.div`
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: flex-end;
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+    display: grid;
+    justify-content: stretch;
+  }
 
   button {
     padding: 1rem 2rem;

@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 const List = styled.ul`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 2rem;
   grid-auto-rows: auto;
   place-items: center;
   list-style: none;

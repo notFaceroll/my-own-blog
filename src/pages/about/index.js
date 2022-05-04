@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const Container = styled.section`
   width: clamp(350px, 60vw, 1440px);
   margin: 0 auto;
+  padding: 0 1rem;
   h1 {
     color: #f2e9e4;
     font-size: 3rem;
@@ -31,17 +32,7 @@ export default function About() {
         nisi placerat imperdiet. Sed efficitur mollis metus ac consequat.
         Aliquam erat volutpat. Proin blandit, quam id ultrices varius, lorem
         arcu convallis lacus, in euismod massa eros ut neque. Fusce vitae eros
-        congue, convallis eros ut, tempus ante. Donec ullamcorper dignissim
-        bibendum. Integer eleifend quis metus vel suscipit. Pellentesque vel mi
-        ut nunc sagittis dapibus. Donec metus diam, ultrices volutpat mi nec,
-        cursus faucibus ligula. Nulla convallis dictum est. Duis ut nisi
-        placerat, ultricies nunc nec, lobortis arcu. Ut sollicitudin sem at nibh
-        pretium, eget condimentum augue fermentum. Etiam eget ipsum bibendum,
-        cursus velit sit amet, egestas dui. Integer massa urna, pharetra sit
-        amet nunc consectetur, pulvinar finibus dui. Aenean euismod, leo
-        elementum vehicula molestie, leo dolor vehicula quam, non interdum enim
-        nunc id enim. Pellentesque habitant morbi tristique senectus et netus et
-        malesuada fames ac turpis egestas. Sed tempus non odio at eleifend.
+        congue, convallis eros ut, tempus ante.
       </p>
     </Container>
   );

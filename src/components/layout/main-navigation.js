@@ -14,9 +14,9 @@ const Header = styled.header`
   color: #f2e9e4;
 
   nav {
-    width: clamp(350px, 60vw, 1440px);
+    width: clamp(300px, 60vw, 1440px);
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     margin: 0 auto;
 
@@ -27,6 +27,11 @@ const Header = styled.header`
       justify-content: space-between;
       padding: 0;
       font-size: 1.125rem;
+
+      @media screen and (max-width: 800px) {
+        width: 100%;
+        padding: 0 1rem;
+      }
     }
 
     li {

@@ -5,11 +5,11 @@ import styled from 'styled-components';
 const Container = styled.section`
   display: flex;
   flex-direction: column;
-  color: #C9ADA7;
+  color: #c9ada7;
   align-items: center;
   padding: 2rem 0 4rem;
   text-align: center;
-  border-bottom: 1px solid #C9ADA7;
+  border-bottom: 1px solid #c9ada7;
 
   > div {
     border-radius: 25px;
@@ -17,16 +17,16 @@ const Container = styled.section`
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 8vw, 3rem);
     font-weight: bold;
     margin: 0;
   }
 
   p {
-    width: 45%;
+    width: clamp(250px, 65%, 400px);
   }
   span {
-    color: #F2E9E4;
+    color: #f2e9e4;
   }
 `;
 
@@ -41,9 +41,12 @@ export default function Hero() {
           height={266}
         />
       </div>
-      <h1>Hello, I am <span>Miguel</span>!</h1>
+      <h1>
+        Hello, I am <span>Miguel</span>!
+      </h1>
       <p>
-        And this is a blog-like with a couple posts and pages that I made while learning NextJS.
+        And this is a blog-like with a couple posts and pages that I made while
+        learning NextJS.
       </p>
     </Container>
   );
